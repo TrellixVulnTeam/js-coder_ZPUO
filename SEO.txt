@@ -1,0 +1,8 @@
+Agregué los keywords en index y los 4 html de templates
+Agregué el description en index y los 4 html de templates
+Agregué el carrucel de bootstrap
+Se corrigió el header y la nagiation bar
+Se agregó el footer 
+Se hizo la delcaración de las variables en la carpeta ./scss/base
+Se modificó una plantilla base de scss en ./scss/base
+Se opta por hacer un diseño desktop first por facilidad en la búsqueda de información y tutorial y por comodidad ya que mi pantalla es muy pequeña

@@ -1,0 +1,181 @@
+body {
+    display: grid;    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: white;
+    font-family: map-get($fuentes, font-primary);
+    font-size: map-get($fuentes, font-size-primary);
+    color: map-get($fuentes, font-color-primary);
+
+    width: 100%;
+    height: 100%;
+}
+// ********************************************************************
+// HEADER AND NAVIGATION BAR
+h1 {
+    margin: 0 20px;
+    padding: 0;
+    font-weight: bold;
+}
+
+a {
+  @include fontMain($size:20px,$bold:none,$color:white);
+  text-decoration: none;
+}
+
+a:hover {
+  color:white;
+  text-decoration:none;
+}
+
+p {
+  @include fontMain($size:20px,$bold:none,$color:map-get($fuentes, font-color-primary));
+  padding:0;
+  margin: 0;
+}
+header {
+  grid-area: hd;
+  width: 100%;
+  height: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: map-get($colores,blue-dark);
+  z-index: 10;
+  .navigationbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 992px;
+    height: 100%;
+    margin: 0 auto;
+
+    .nav-toggle {
+      color: white;
+      background: none;
+      border: none;
+      font-size: 30px;
+      padding: 0 20px;
+
+      display: none;
+    }
+
+    .navigationbar-ul {
+      display: flex;
+      list-style-type: none;
+
+      .navigationbar-li {
+        display: flex;
+        align-items: center;
+        font-size: 18px;
+        padding: 0 10px;
+        color: white;
+        cursor: pointer;
+        width: max-content;
+        height: 100px;
+      }
+
+      #navigationbar-li-active {
+        background-color: map-get($colores, bg );
+        a {
+          color: map-get($colores,grey-dark);
+        }
+      }
+
+      .navigationbar-li:hover {
+        text-decoration: underline;
+        background-color: map-get($colores, bg );
+        color: map-get($colores,grey-dark);
+        a {
+          color: map-get($colores,grey-dark)
+        }
+      }
+
+
+    }
+
+  }
+}
+
+main {
+  grid-area: main !important; 
+  // CAROUSEL is Boostrap on base
+}
+
+// ***************************************************************
+// FOOTER
+
+.footer {
+  grid-area: ft;
+  width:100%;
+  height:100%;   /* Height of the footer */
+  background: map-get($colores, blue-dark ) ;
+  z-index: 10;
+  .footer-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    &-links {
+      display: flex;
+      align-items: center;
+
+      .fa-facebook-square, .fa-whatsapp-square, .fa-instagram {
+        background-color: transparent;
+        color: #e7eaeb;
+        margin: 0 20px;
+    }
+    }
+  }
+}
+
+
+
+// ***************************************************************
+// MEDIA QUERIES
+@include mediaQuery ($diseñoPantalla:mobile,$tamaño:768px) {
+  body{  
+    header {
+      .navigationbar{
+        h1 {
+          padding-left: 20px !important;
+        }
+        .navigationbar-ul {
+          flex-direction: column;
+          align-items: flex-start;
+          margin: 0;
+          padding: 0;
+          position: fixed;
+          top: 100px;
+          width: 100%;
+          height: 100%;
+          overflow-y: auto;
+          background-color: map-get($colores, grey-dark );
+          left: -100%;
+          transition: left 0.3s;
+          .navigationbar-li {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            padding: 0 20px;
+            font-size: 24px;
+          }
+        }
+        .nav-toggle{
+          display: block;
+          cursor: pointer;
+        }
+        .navigationbar-ul_visible {
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+
+

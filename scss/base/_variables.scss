@@ -1,0 +1,57 @@
+// ****************************************************
+//                      COLORES
+// ****************************************************
+
+$colores: (
+    bg : #E5E5E5,
+    grey-dark: #333,
+    blue-dark: #263F5B,
+    blue-middle: #2D82BE,
+    blue-light: #29BCD6,
+    orange-solid: #FC9D2E,
+
+    hover-dark: dark(blue-light, 20),
+);
+
+// ****************************************************
+//                      FUENTES
+// ****************************************************
+
+$fuentes: (
+    font-primary: 'Roboto Slab',
+    font-size-primary: 20px,
+    font-color-primary: #333,
+    font-color-secondary: white,
+);
+
+
+// MIXINS
+@mixin fontMain ($size,$bold,$color) {
+    font-family: map-get($fuentes , font-primary);
+    font-size: $size;
+    font-weight: $bold;
+    color: $color;
+}
+
+
+// ****************************************************
+//                    MEDIA QUERIES
+// ****************************************************
+
+@mixin mediaQuery ($diseñoPantalla,$tamaño){
+    @if $diseñoPantalla == mobile {
+        @media only screen and (max-width: $tamaño){
+        @content;
+        }
+    }
+    @else if $diseñoPantalla == tableta{
+        @media only screen and (min-width: $tamaño){
+        @content;
+        }
+    }
+    @else if $diseñoPantalla == desktop{
+        @media only screen and (min-width: $tamaño){
+        @content;
+        }
+    }
+}

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords"
+        content="Inversión, servicios, emprendimiento, financiamiento, créditos, página web, marketing, empresas, pymes, Colombia, invertir, crecer, ventas, vender, contabilidad, tiendas, tienda virtual">
+
+    <meta name="description"
+        content="Emprendiendo te brinda financiamiento, asesoría y marketing para potenciar tu negocio. Encuentra nuestros diferentes servicios, desde financimiento mediante créditos o capital privado, marketing y diseño de producto, gestión de los estados financieros y seguimiento de clientes, proveedores y entregas">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600;800&display=swap" rel="stylesheet">
+
+    <!-- FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/328858abb8.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- STATIC STYLE -->
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!-- D3 JS package -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <!-- JAVASCRIPT LINK read -> defer -->
+    <script defer src="../js/index.js"></script>
+    <script defer src="../js/moment.js"></script>
+    <script defer src="../js/main.js"></script>
+    
+
+    <title>Emprendiendo - servicios</title>
+</head>
+
+<body class="body-services">
+    <!-- ************************************************************** -->
+    <!-- ************************ HEADER ****************************** -->
+    <header class="header">
+        <nav class="navigationbar">
+            <a class="navigationbar-h1" href="../index.html">
+                <h1 class="h1 p-0 m-0 lh-1">Emprendiendo</h1>
+            </a>
+            <button class="nav-toggle" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+            <ul class="navigationbar-ul m-0">
+                <li class="navigationbar-li" ><a href="../index.html"
+                        class="navigationbar-link">Inicio</a></li>
+                <li class="navigationbar-li" id="navigationbar-li-active"><a href="./services.html"
+                        class="navigationbar-link">Servicios</a></li>
+                <li class="navigationbar-li"><a href="./aboutus.html" class="navigationbar-link">Sobre
+                        Nosotros</a></li>
+                <li class="navigationbar-li"><a href="./pricing.html" class="navigationbar-link">Precios</a>
+                </li>
+                <li class="navigationbar-li"><a href="./contactus.html"
+                        class="navigationbar-link">Contáctanos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- SERVICES DEMOS -->
+
+    <main class="main-services">
+        <div class="demo-financing">
+            <h2 class="h2-demo">Financiamiento</h2>
+            <p>Obtén financiamiento de bancos e inversores privados</p>
+            <img src="../images/Lightdashboard.svg" alt="dashboar demo image"> 
+        </div>
+    </main>
+    <div class="demo-financing-form">
+        <form>
+            <label for="fname">Capital</label>
+            <input type="number" id="monto" name="Capital" placeholder="10'000.000">
+            <label for="lname">Plazo en meses</label>
+            <input type="number" id="tiempo"  name="Plazo" placeholder="10">
+            <label for="correo">Rentabilidad/Interés EA</label>
+            <input type="number" id="interes" step=0.01 name="Interés" placeholder="10">
+            <!-- <input type="submit" id="btnCalcular" value="Calcular"> -->
+        </form>
+        <button type="submit" class="btn btn-primary" id="btnCalcular">Calcular</button>
+    </div>
+    <div id="demo-financing-tag">
+        <div id="intTotal">
+            <h3>
+                Intereses totales
+            </h3>
+        </div>
+        <div id="pagoTotal">
+            <h3>Interés + Capital</h3>
+        </div>
+        
+
+    </div>
+    <!-- <div id='app'>
+        <div id='chart'>
+            <svg></svg>
+        </div>
+    </div> -->
+    <div class="demo-financing-table">
+        <table id="lista-tabla" class="table">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Cuota</th>
+                    <th>Capital</th>
+                    <th>Interés</th>
+                    <th>Saldo</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <section class="sec1">
+        <div class="demo-management">
+            <h2 class="h2-demo">Gestión, Contabilidad y Asesoría</h2>
+            <p>Tus estados financieros ¡son importantes! con ellos conocemos tu empresa, su estado, sus debilidades y
+                fortalezas. Con ellos podemos asesorarte, financiarte y muchas cosas más!</p>
+            <img src="../images/accounting.svg" alt="accounting demo image">
+        </div>
+    </section>
+    <section class="sec2">
+        <div class="demo-marketing">
+            <h2 class="h2-demo">Marketing</h2>
+            <p>Si estás en internet, estás en todo lado. Ten tu propia página web y te ayudamos a crear un diseño de producto para vender más</p>
+            <img src="../images/marketing.svg" alt="marketing demo image">
+        </div>
+    </section>
+    <!-- ************************************************************** -->
+    <!-- ************************ FOOTER ****************************** -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-container-links">
+                <a href="http://facebook.com" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-facebook-square fa-2x"></i>
+                </a>
+                <a href="http://instagram.com" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-instagram fa-2x"></i>
+                </a>
+                <a href="./contactus.html" rel="noopener">
+                    <i class="fa-brands fa-whatsapp-square fa-2x"></i>
+                </a>
+                
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
