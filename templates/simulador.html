@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords"
-        content="Inversión, servicios, emprendimiento, financiamiento, créditos, página web, marketing, empresas, pymes, Colombia, invertir, crecer, ventas, vender, contabilidad, tiendas, tienda virtual">
+        content="Inversión, emprendimiento, financiamiento, créditos, página web, marketing, empresas, pymes, Colombia, invertir, crecer, ventas, vender, contabilidad, tiendas, tienda virtual">
 
     <meta name="description"
-        content="Emprendiendo te brinda financiamiento, asesoría y marketing para potenciar tu negocio. Encuentra nuestros diferentes servicios, desde financimiento mediante créditos o capital privado, marketing y diseño de producto, gestión de los estados financieros y seguimiento de clientes, proveedores y entregas">
+        content="Emprendiendo te brinda financiamiento, asesoría y marketing para potenciar tu negocio. Administra tus tiendas, clientes y proveedores desde un sólo lugar, mantente al día con tus estados financieros y genera publicaciones de alto impacto publicitario">
     <!-- GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,24 +17,22 @@
 
     <!-- FONTAWESOME -->
     <script src="https://kit.fontawesome.com/328858abb8.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- BOOSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- STATIC STYLE -->
     <link rel="stylesheet" href="../css/main.css">
 
-    <!-- D3 JS package -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-
     <!-- JAVASCRIPT LINK read -> defer -->
     <script defer src="../js/index.js"></script>
     <script defer src="../js/moment.js"></script>
-    <script defer src="../js/main.js"></script>
-    
-
-    <title>Emprendiendo - servicios</title>
+    <script defer src="../js/simulador.js"></script>
+    <title>Emprendiendo</title>
 </head>
 
-<body class="body-services">
+<body class="body-simulador">
     <!-- ************************************************************** -->
     <!-- ************************ HEADER ****************************** -->
     <header class="header">
@@ -46,12 +44,12 @@
                 <i class="fa-solid fa-bars"></i>
             </button>
             <ul class="navigationbar-ul m-0">
-                <li class="navigationbar-li" ><a href="../index.html"
+                <li class="navigationbar-li"><a href="../index.html"
                         class="navigationbar-link">Inicio</a></li>
-                <li class="navigationbar-li" id="navigationbar-li-active"><a href="./services.html"
+                <li class="navigationbar-li"><a href="./services.html"
                         class="navigationbar-link">Servicios</a></li>
-                <li class="navigationbar-li"><a href="./simulador.html"
-                    class="navigationbar-link">Simulador</a></li>
+                <li class="navigationbar-li" id="navigationbar-li-active"><a href="./simulador.html"
+                        class="navigationbar-link">Simulador</a></li>
                 <li class="navigationbar-li"><a href="./aboutus.html" class="navigationbar-link">Sobre
                         Nosotros</a></li>
                 <li class="navigationbar-li"><a href="./pricing.html" class="navigationbar-link">Precios</a>
@@ -62,30 +60,39 @@
         </nav>
     </header>
 
-    <!-- SERVICES DEMOS -->
+    <!-- ************************************************************** -->
+    <!-- ************************ CONTENIDO ****************************** -->
 
-    <main class="main-services">
-        <div class="demo-financing">
-            <h2 class="h2-demo">Financiamiento</h2>
-            <p>Obtén financiamiento de bancos e inversores privados</p>
-            <img src="../images/Lightdashboard.svg" alt="dashboar demo image"> 
-        </div>
-    </main>
-    <section class="sec1">
-        <div class="demo-management">
-            <h2 class="h2-demo">Gestión, Contabilidad y Asesoría</h2>
-            <p>Tus estados financieros ¡son importantes! con ellos conocemos tu empresa, su estado, sus debilidades y
-                fortalezas. Con ellos podemos asesorarte, financiarte y muchas cosas más!</p>
-            <img src="../images/accounting.svg" alt="accounting demo image">
-        </div>
-    </section>
-    <section class="sec2">
-        <div class="demo-marketing">
-            <h2 class="h2-demo">Marketing</h2>
-            <p>Si estás en internet, estás en todo lado. Ten tu propia página web y te ayudamos a crear un diseño de producto para vender más</p>
-            <img src="../images/marketing.svg" alt="marketing demo image">
-        </div>
-    </section>
+    <div class="simulador">
+        <form action="" method="GET" id="simulador">
+            <label for="GET-monto">Monto</label>
+            <input id="GET-monto" type="number" name="monto" placeholder="Monto a solicitar">
+            <label for="GET-interes">Interés</label>
+            <input id="GET-interes" type="number" name="interes" placeholder="Tasa de interés EA">
+            <label for="GET-plazo">Plazo</label>
+            <input id="GET-plazo" type="number" name="plazo" placeholder="Plazo en meses">
+            <input type="submit" value="calcular" id="calcular">
+        </form>
+    </div>
+    <div id="tarjeta-total">
+        <h2>Monto total:</h2>
+    </div>
+
+    <div class="amortizacion">
+        <table id="lista-tabla" class="table">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Cuota</th>
+                    <th>Abono a capital</th>
+                    <th>Pago de interés</th>
+                    <th>Saldo</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
     <!-- ************************************************************** -->
     <!-- ************************ FOOTER ****************************** -->
     <footer class="footer">
@@ -100,7 +107,7 @@
                 <a href="./contactus.html" rel="noopener">
                     <i class="fa-brands fa-whatsapp-square fa-2x"></i>
                 </a>
-                
+
             </div>
         </div>
     </footer>
