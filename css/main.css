@@ -342,38 +342,137 @@ main {
         text-align: justify; } }
 
 .body-simulador {
-  grid-template-areas: "hd   hd   hd   hd   hd   hd   hd   hd   hd   hd   hd   hd" ".    .    si   si   si   si   ch   ch   ch   ch   .    ." ".    .    ta   ta   ta   ta   ta   ta   ta   ta   .    . " "ft   ft   ft   ft   ft   ft   ft   ft   ft   ft   ft   ft"; }
-  .body-simulador .simulador {
-    grid-area: si;
+  grid-template-areas: "hd   hd   hd   hd   hd   hd   hd   hd   hd   hd   hd   hd" ".    .    fo   fo   fo   fo   fo   fo   fo   fo   .   . " ".    .    tb   tb   tb   tb   tb   tb   tb   tb   .   . " "ft   ft   ft   ft   ft   ft   ft   ft   ft   ft   ft   ft"; }
+  .body-simulador .form-div {
     width: 100%;
-    height: 20rem;
-    margin-top: 20px; }
-    .body-simulador .simulador form {
-      display: flex;
-      flex-direction: column;
+    height: 30rem;
+    grid-area: fo;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #f4f1f1; }
+    .body-simulador .form-div form {
+      display: grid;
+      grid-template-areas: "a a a a a a" "b b b b b b" "d d d d d d";
       width: 100%;
       height: 100%; }
-  .body-simulador #tarjeta-total {
-    grid-area: ch;
-    margin-top: 20px;
+      .body-simulador .form-div form h2 {
+        grid-area: a; }
+      .body-simulador .form-div form .form-datos {
+        grid-area: b;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: 100%; }
+        .body-simulador .form-div form .form-datos .form-datos-identificacion {
+          display: inherit;
+          flex-direction: column; }
+        .body-simulador .form-div form .form-datos .form-datos-financieros {
+          display: inherit;
+          flex-direction: column; }
+          .body-simulador .form-div form .form-datos .form-datos-financieros label:not(:first-child) {
+            margin-top: 10px; }
+      .body-simulador .form-div form .checkboxes {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        grid-area: d; }
+        .body-simulador .form-div form .checkboxes div {
+          display: inherit;
+          flex-direction: row;
+          justify-content: space-evenly; }
+          .body-simulador .form-div form .checkboxes div #checkBancos {
+            display: inherit;
+            flex-direction: column;
+            align-items: center; }
+            .body-simulador .form-div form .checkboxes div #checkBancos input {
+              margin: 10px 0;
+              order: 3; }
+          .body-simulador .form-div form .checkboxes div #checkInversores {
+            display: inherit;
+            flex-direction: column;
+            align-items: center; }
+            .body-simulador .form-div form .checkboxes div #checkInversores input {
+              margin: 10px 0;
+              order: 3; }
+          .body-simulador .form-div form .checkboxes div button {
+            width: 30%;
+            height: 50%;
+            background-color: #2D82BE;
+            color: white;
+            box-shadow: 2px 2px #333;
+            border-radius: 5px; }
+          .body-simulador .form-div form .checkboxes div button:hover {
+            background-color: #FC9D2E;
+            color: #333; }
+  .body-simulador .ofertas {
+    grid-area: fo;
+    background-color: #d6cdcd;
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding-left: 40px; }
+    height: 30rem;
+    margin: 20px 0;
+    padding: 10px;
+    display: none;
+    flex-direction: row; }
+    .body-simulador .ofertas .ofertas-bancos {
+      width: 50%;
+      height: 100%; }
+      .body-simulador .ofertas .ofertas-bancos form {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+        width: 100%; }
+        .body-simulador .ofertas .ofertas-bancos form label {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-evenly;
+          width: 100%;
+          margin: 10px 0; }
+          .body-simulador .ofertas .ofertas-bancos form label .div-tasa {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center; }
+            .body-simulador .ofertas .ofertas-bancos form label .div-tasa p {
+              margin: 0 10px; }
+    .body-simulador .ofertas .ofertas-info {
+      width: 50%;
+      height: 100%;
+      display: grid;
+      grid-template-areas: ". . . close" "inf inf inf inf" "form form form form" ". . . ." ". . . .";
+      margin-left: 20px; }
+      .body-simulador .ofertas .ofertas-info #bttnClosesimulador {
+        grid-area: close;
+        width: 70px;
+        height: 50px; }
+      .body-simulador .ofertas .ofertas-info .ofertas-info-empresa {
+        grid-area: inf; }
+      .body-simulador .ofertas .ofertas-info .ofertas-form {
+        grid-area: form; }
+        .body-simulador .ofertas .ofertas-info .ofertas-form form label {
+          display: flex;
+          flex-direction: column;
+          margin: 10px 0; }
+          .body-simulador .ofertas .ofertas-info .ofertas-form form label input {
+            width: 70%; }
   .body-simulador .amortizacion {
-    grid-area: ta;
-    padding-left: 0 30px; }
-    .body-simulador .amortizacion #lista-tabla th:not(:first-child) {
-      text-align: left;
-      border-bottom: 1px solid #ddd; }
-    .body-simulador .amortizacion #lista-tabla td:not(:first-child) {
-      text-align: left;
-      border-bottom: 1px solid #ddd; }
-    .body-simulador .amortizacion #lista-tabla tr:hover {
-      background-color: coral; }
+    display: grid;
+    grid-area: tb;
+    width: 100%;
+    height: 30rem;
+    overflow: scroll; }
+
+@media screen and (max-width: 600px) {
+  .tab {
+    display: flex;
+    flex-direction: column; }
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+    float: none; } }
 
 .body-aboutus {
   grid-template-areas: "hd   hd   hd   hd   hd   hd   hd   hd   hd   hd   hd   hd" ".    .    main main main main main main main main .    ." "ft   ft   ft   ft   ft   ft   ft   ft   ft   ft   ft   ft"; }

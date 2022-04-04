@@ -28,7 +28,12 @@
     <!-- JAVASCRIPT LINK read -> defer -->
     <script defer src="../js/index.js"></script>
     <script defer src="../js/moment.js"></script>
+    <script defer src="../js/form.js"></script>
     <script defer src="../js/simulador.js"></script>
+
+    <!-- EXTERNAL SOURCES -->
+    <!-- <script  src="../bancosDB/bancos.json"></script> -->
+
     <title>Emprendiendo</title>
 </head>
 
@@ -44,18 +49,15 @@
                 <i class="fa-solid fa-bars"></i>
             </button>
             <ul class="navigationbar-ul m-0">
-                <li class="navigationbar-li"><a href="../index.html"
-                        class="navigationbar-link">Inicio</a></li>
-                <li class="navigationbar-li"><a href="./services.html"
-                        class="navigationbar-link">Servicios</a></li>
+                <li class="navigationbar-li"><a href="../index.html" class="navigationbar-link">Inicio</a></li>
+                <li class="navigationbar-li"><a href="./services.html" class="navigationbar-link">Servicios</a></li>
                 <li class="navigationbar-li" id="navigationbar-li-active"><a href="./simulador.html"
                         class="navigationbar-link">Simulador</a></li>
                 <li class="navigationbar-li"><a href="./aboutus.html" class="navigationbar-link">Sobre
                         Nosotros</a></li>
                 <li class="navigationbar-li"><a href="./pricing.html" class="navigationbar-link">Precios</a>
                 </li>
-                <li class="navigationbar-li"><a href="./contactus.html"
-                        class="navigationbar-link">Contáctanos</a></li>
+                <li class="navigationbar-li"><a href="./contactus.html" class="navigationbar-link">Contáctanos</a></li>
             </ul>
         </nav>
     </header>
@@ -63,19 +65,84 @@
     <!-- ************************************************************** -->
     <!-- ************************ CONTENIDO ****************************** -->
 
-    <div class="simulador">
-        <form action="" method="GET" id="simulador">
-            <label for="GET-monto">Monto</label>
-            <input id="GET-monto" type="number" name="monto" placeholder="Monto a solicitar">
-            <label for="GET-interes">Interés</label>
-            <input id="GET-interes" type="number" name="interes" placeholder="Tasa de interés EA">
-            <label for="GET-plazo">Plazo</label>
-            <input id="GET-plazo" type="number" name="plazo" placeholder="Plazo en meses">
-            <input type="submit" value="calcular" id="calcular">
+    <div class="form-div">
+        <form class="form-simulator">
+            <h2>Simulador de financiamiento</h2>
+            <div class="form-datos">
+                <div class="form-datos-identificacion">
+                    <label class="form-label" id="nombreEmpresa">Nombre de la empresa:
+                        <input type="text">
+                    </label>
+                    <label class="form-label" >Número de empleados:
+                        <input type="number" id="numeroEmpleados">
+                    </label>
+                </div>
+                <div class="form-datos-financieros">
+                    <label class="formLabel" id="sectorEmpresa">Sector:
+                        <select id="CIIU" name="CIIU">
+                            <option value="comerical">Comercial</option>
+                            <option value="agricola">Agricola</option>
+                            <option value="tecnología">Tecnología</option>
+                        </select>
+                    </label>
+                    <label class="formLabel" id="ingresosEmpresa">Ingresos:
+                        <select id="ingresos" name="ingresos">
+                            <option value="1">Entre 1 y 10 millones</option>
+                            <option value="2">Entre 11 y 50 millones</option>
+                            <option value="3">Entre 50 y 500 millones</option>
+                            <option value="4">Más de 500 millones</option>
+                        </select>
+                    </label>
+                    <label class="formLabel" id="gastosEmpresa">Gastos:
+                        <select id="gastos" name="gastos">
+                            <option value="1">Entre 1 y 10 millones</option>
+                            <option value="2">Entre 11 y 50 millones</option>
+                            <option value="3">Entre 50 y 500 millones</option>
+                            <option value="4">Más de 500 millones</option>
+                        </select>
+                    </label>
+                </div>
+            </div>
+            <div class="checkboxes">
+                <p>Escoga el tipo de financiador</p>
+                <div>
+                    <label id="checkBancos">Bancos
+                        <input type="checkbox" name="check" onclick="onlyOne(this)" />
+                        <i class="fa-solid fa-building-columns fa-5x"></i>
+                    </label>
+
+                    <label id="checkInversores">Inversores
+                        <input type="checkbox" name="check" onclick="onlyOne(this)" />
+                        <i class="fa-solid fa-user-group fa-5x"></i>
+                    </label>
+                    <button type="button" id="bttnSimulador">Ver ofertas</button>
+                </div>
+            </div>
         </form>
     </div>
-    <div id="tarjeta-total">
-        <h2>Monto total:</h2>
+
+    <div class="ofertas">
+        <div class="ofertas-bancos">
+            <form class="ofertas-list" id="listaOfertas" style="list-style-type: none;">
+            </form>
+        </div>
+        <div class="ofertas-info">
+            <button type="button" id="bttnClosesimulador" onclick="cerrar()">cerrar</button>
+            <div class="ofertas-info-empresa" id="tamañoEmpresa">
+                <p>Tu empresa es:</p>
+            </div>
+            <div class="ofertas-form">
+                <form id ='tablaSimulador' method="GET">
+                    <label for="monto">Monto a solicitar
+                        <input type='number' id='monto'/>
+                    </label>
+                    <label for="plazo">Plazo del finaciamiento en meses
+                        <input type='number' id='plazo'/>
+                    </label>
+                    <input type = 'submit' value="Calcular" id="calcular">
+                </form>
+            </div>
+        </div>
     </div>
 
     <div class="amortizacion">

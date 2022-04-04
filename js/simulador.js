@@ -1,18 +1,42 @@
-// Fuente: https://www.youtube.com/watch?v=_VPeRSPlf7g
 
-const simulador = document.getElementById('simulador');
-const calcular = document.getElementById('calcular');
-const tarjeta1 = document.getElementById('tarjeta-total');
-
-const monto = document.getElementById('GET-monto');
-const tasa = document.getElementById('GET-interes');
-const plazo = document.getElementById('GET-plazo');
-
+const buttonSimulador = document.getElementById('bttnSimulador')
+const Simulador = document.getElementById('tablaSimulador')
 const llenarTabla = document.querySelector("#lista-tabla tbody");
 
-window.onload = function saludo(){
-    alert("Bienvenido al simulador de financiamiento");
+const companyName = document.getElementById('nombreEmpresa');
+const companyEmpoyees = document.getElementById('numeroEmpleados');
+const companySector = document.getElementById('CIIU');
+
+const monto = document.getElementById('monto');
+const plazo = document.getElementById('plazo');
+
+function sizeCompany(companyEmpoyees){
+    const tamaño = document.getElementById('tamañoEmpresa');
+    while (tamaño.children[1]) {
+        tamaño.removeChild(tamaño.children[1]);
+    }
+
+    if (  companyEmpoyees >= 0 && companyEmpoyees <= 5){
+        sizeCo = 'Micro';
+    } else if ( companyEmpoyees > 5 && companyEmpoyees <= 10){
+        sizeCo = 'Pequeña';
+    } else if ( companyEmpoyees > 10 && companyEmpoyees <= 25){
+        sizeCo = 'Mediana';
+    } else if ( companyEmpoyees > 25){
+        sizeCo = 'Grande';
+    } else {
+        sizeCo = companyEmpoyees
+    }
+
+    
+    const size = document.createElement('p');
+    size.innerHTML = `${sizeCo}`;
+    tamaño.appendChild(size)
+
+    return sizeCo
 }
+
+
 
 function calcularCuota(monto, interes, tiempo) {
 
@@ -55,24 +79,31 @@ function calcularCuota(monto, interes, tiempo) {
     }
 
     const pagototal = totalInteres + parseFloat(capital)
-    let tarjeta = document.createElement('p');
-    tarjeta.innerHTML = `${pagototal.toFixed(2)}
-                        <br />
-                        Con tasa Namv ${(interes*12*100).toFixed(2)}% a ${tiempo} meses`;
-    tarjeta1.appendChild(tarjeta);
 }
 
 
-simulador.addEventListener('submit',()=>{
-    calcularCuota(parseFloat(monto.value), parseFloat(tasa.value), parseFloat(plazo.value));
+
+
+buttonSimulador.addEventListener('click',()=>{
+    document.getElementsByClassName('ofertas')[0].style.display = 'flex';
+    size = sizeCompany(companyEmpoyees.value);
+    insertOptions(size);
 })
 
-simulador.addEventListener('submit',function(e){
+function cerrar(){
+    document.getElementsByClassName('ofertas')[0].style.display = 'none';
+}
+
+Simulador.addEventListener('submit',function(e){
     e.preventDefault();
-})
-// simulador.addEventListener('submit',function(e){
-//     let tarjeta = document.createElement('p');
-//     tarjeta.innerHTML = `${monto.value}`;
-//     tarjeta1.appendChild(tarjeta);
-//     e.preventDefault();
-// })
+    const Op = document.getElementsByName('options');
+    Op.forEach((item)=>{
+        if (item.checked == true) {
+            tasa = item.value;
+        }
+    });
+
+    calcularCuota(parseInt(monto.value),parseFloat(tasa),parseInt(plazo.value))
+    
+})    
+
