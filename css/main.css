@@ -349,7 +349,8 @@ main {
     grid-area: fo;
     margin: 20px 0;
     padding: 10px;
-    background-color: #f4f1f1; }
+    background-color: #f1f0f0;
+    border-radius: 15px; }
     .body-simulador .form-div form {
       display: grid;
       grid-template-areas: "a a a a a a" "b b b b b b" "d d d d d d";
@@ -396,8 +397,8 @@ main {
               margin: 10px 0;
               order: 3; }
           .body-simulador .form-div form .checkboxes div button {
-            width: 30%;
-            height: 50%;
+            width: 25%;
+            height: 40%;
             background-color: #2D82BE;
             color: white;
             box-shadow: 2px 2px #333;
@@ -407,37 +408,31 @@ main {
             color: #333; }
   .body-simulador .ofertas {
     grid-area: fo;
-    background-color: #d6cdcd;
+    background-color: white;
     width: 100%;
     height: 30rem;
     margin: 20px 0;
     padding: 10px;
     display: none;
-    flex-direction: row; }
+    flex-direction: row;
+    border-radius: 20px;
+    box-shadow: 5px 5px #cac9c9; }
     .body-simulador .ofertas .ofertas-bancos {
       width: 50%;
       height: 100%; }
       .body-simulador .ofertas .ofertas-bancos form {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        flex-direction: column;
-        margin: 20px;
-        width: 100%; }
+        width: 100%;
+        height: 80%;
+        overflow-y: scroll; }
         .body-simulador .ofertas .ofertas-bancos form label {
           display: flex;
-          flex-direction: row;
-          align-items: center;
-          justify-content: space-evenly;
-          width: 100%;
-          margin: 10px 0; }
-          .body-simulador .ofertas .ofertas-bancos form label .div-tasa {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center; }
-            .body-simulador .ofertas .ofertas-bancos form label .div-tasa p {
-              margin: 0 10px; }
+          flex-direction: column;
+          margin: 10px 10px; }
+          .body-simulador .ofertas .ofertas-bancos form label .banco-checkbox input {
+            margin: 0 40px;
+            height: 20px;
+            width: 20px;
+            cursor: pointer; }
     .body-simulador .ofertas .ofertas-info {
       width: 50%;
       height: 100%;
@@ -446,8 +441,13 @@ main {
       margin-left: 20px; }
       .body-simulador .ofertas .ofertas-info #bttnClosesimulador {
         grid-area: close;
-        width: 70px;
-        height: 50px; }
+        width: 60px;
+        height: 40px;
+        border: none;
+        font-size: 15px;
+        background-color: transparent; }
+      .body-simulador .ofertas .ofertas-info #bttnClosesimulador:hover {
+        color: #d64949; }
       .body-simulador .ofertas .ofertas-info .ofertas-info-empresa {
         grid-area: inf; }
       .body-simulador .ofertas .ofertas-info .ofertas-form {
@@ -463,7 +463,10 @@ main {
     grid-area: tb;
     width: 100%;
     height: 30rem;
-    overflow: scroll; }
+    overflow: scroll;
+    background-color: white;
+    border-radius: 5px;
+    margin: 20px 0; }
 
 @media screen and (max-width: 600px) {
   .tab {

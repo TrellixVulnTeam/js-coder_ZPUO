@@ -13,7 +13,8 @@
         grid-area: fo;
         margin: 20px 0;
         padding: 10px;
-        background-color: rgb(244, 241, 241);
+        background-color: rgb(241, 240, 240);
+        border-radius: 15px;
         form {
             display: grid;
             grid-template-areas:
@@ -82,8 +83,8 @@
                     }
 
                     button{
-                        width: 30%;
-                        height: 50%;
+                        width: 25%;
+                        height: 40%;
                         background-color: map-get($colores,blue-middle);
                         color: white;
                         box-shadow:  2px 2px map-get($colores, grey-dark);
@@ -102,13 +103,15 @@
 
     .ofertas{
         grid-area: fo;
-        background-color: rgb(214, 205, 205);
+        background-color: white;
         width: 100%;
         height: 30rem;
         margin: 20px 0;
         padding: 10px;
         display: none;
         flex-direction: row;
+        border-radius: 20px;
+        box-shadow: 5px 5px rgb(202, 201, 201);
         // justify-content: space-around;
 
         .ofertas-bancos {
@@ -116,32 +119,23 @@
             height: 100%;
 
             form {
-                margin: 0;
-                padding: 0;
-                display: flex;
-                flex-direction: column;
-                margin: 20px;
                 width: 100%;
+                height: 80%;
+                overflow-y: scroll;
+
                 label {
                     display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    justify-content: space-evenly;
-                    width: 100%;
-                    margin: 10px 0;
-
-                    .div-tasa{
-                        display: flex;
-                        flex-direction: row;
-                        justify-content: center;
-                        align-items: center;
-                        p {
-                            margin: 0 10px;
+                    flex-direction: column;
+                    margin: 10px 10px;
+                    .banco-checkbox{
+                        input {
+                            margin: 0 40px;
+                            height: 20px;
+                            width: 20px;
+                            cursor: pointer;
                         }
                     }
                 }
-
-
             }
         }
 
@@ -156,13 +150,21 @@
             ". . . ."
             ". . . .";
             margin-left: 20px;
-
+            
 
             #bttnClosesimulador {
                 grid-area: close;
-                width: 70px;
-                height: 50px;
+                width: 60px;
+                height: 40px;
+                border: none;
+                font-size: 15px;
+                background-color: transparent;
             }
+
+            #bttnClosesimulador:hover {
+                color: rgb(214, 73, 73);
+            }
+
             .ofertas-info-empresa{
                 grid-area: inf;
             }
@@ -188,181 +190,14 @@
         width: 100%;
         height: 30rem;
         overflow: scroll;
-
+        background-color: white;
+        border-radius: 5px;
+        margin: 20px 0;
     }
         
 }
 
 
-
-    // .container {
-    //     grid-area: co;
-    //     border-radius: 5px;
-    //     background-color: #f2f2f2;
-    //     margin: 30px auto;
-
-    //     #regForm {
-    //         background-color: #ffffff;
-    //         margin: 20px auto;
-    //         font-family: Raleway;
-    //         padding: 20px;
-    //         width: 70%;
-    //         min-width: 600px;
-    //     }
-
-    //     h2 {
-    //         text-align: center;  
-    //     }
-
-    //     input, select {
-    //         padding: 10px;
-    //         width: 100%;
-    //         font-size: 17px;
-    //         font-family: Raleway;
-    //         border: 1px solid #aaaaaa;
-    //         resize: vertical;
-    //     }
-
-    //         /* Mark input boxes that gets an error on validation: */
-    //     input.invalid {
-    //         background-color: #ffdddd;
-    //     }
-
-    //         /* Hide all steps by default: */
-    //     .tab {
-    //         width: 100%;
-    //         display: none;
-    //         label {
-    //             display: inline-block;
-    //             width: 100%;
-    //             height: 100%;
-    //             margin-top: 10px;
-    //         }
-
-    //         .col-25 {
-    //             float: left;
-    //             width: 30%;
-    //             margin-top: 10px;
-    //         }
-
-    //         .col-50 {
-    //             margin: 5px auto;
-    //             width: 50%;
-    //             height: 15rem;
-    //             margin-top: 10px;
-    //             label {
-    //                 display: flex;
-    //                 flex-direction: column;
-    //                 justify-content: flex-start;
-    //                 align-items: center;
-    //             }
-    //         }
-
-    //         .col-75 {
-    //             float: left;
-    //             width: 70%;
-    //             margin-top: 10px;
-    //         }
-
-    //         .row:after {
-    //             content: "";
-    //             display: flex;
-    //             align-items: center;
-    //         }
-    //     }
-
-    //     .stepButton {
-    //         margin-top: 15px;
-    //     }
-
-    //     button {
-    //         background-color: #04AA6D;
-    //         color: #ffffff;
-    //         border: none;
-    //         padding: 10px 20px;
-    //         font-size: 17px;
-    //         font-family: Raleway;
-    //         cursor: pointer;
-    //     }
-
-    //     button:hover {
-    //         opacity: 0.8;
-    //     }
-
-    //     #prevBtn {
-    //         background-color: #bbbbbb;
-    //     }
-        
-    //         /* Make circles that indicate the steps of the form: */
-    //     .step {
-    //         height: 15px;
-    //         width: 15px;
-    //         margin: 0 2px;
-    //         background-color: #bbbbbb;
-    //         border: none;  
-    //         border-radius: 50%;
-    //         display: inline-block;
-    //         opacity: 0.5;
-    //     }
-        
-    //     .step.active {
-    //         opacity: 1;
-    //     }
-        
-    //         /* Mark the steps that are finished and valid: */
-    //     .step.finish {
-    //         background-color: #04AA6D;
-    //     }
-    // }
-
-    
-    // .bancos {
-    //     grid-area: si;
-    // }
-        // .simulador{
-        //     grid-area: si;
-        //     width: 100%;
-        //     height: 20rem;
-
-        //     margin-top: 20px;
-        //     form {
-        //         display: flex;
-        //         flex-direction: column;
-        //         width: 100%;
-        //         height: 100%;
-        //     }
-        // }
-
-    // #tarjeta-total {
-    //     grid-area: ch;
-    //     margin-top: 20px;
-    //     width: 100%;
-    //     height: 100%;
-    //     display: flex;
-    //     flex-direction: column;
-    //     justify-content: flex-start;
-    //     align-items: flex-start;
-    //     padding-left: 40px;
-
-    // }
-
-    // .amortizacion {
-    //     grid-area: ta;
-    //     padding-left: 0 30px;
-    //     #lista-tabla{
-    //         th:not(:first-child){
-    //             text-align: left;
-    //             border-bottom: 1px solid #ddd;
-    //         }
-    //         td:not(:first-child){
-    //             text-align: left;
-    //             border-bottom: 1px solid #ddd;
-    //         }        
-    //         tr:hover {background-color: coral;}
-    //     }
-    // }
-
-// }
 
 
 @media screen and (max-width: 600px) {

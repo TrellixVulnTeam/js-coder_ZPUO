@@ -25,14 +25,22 @@
     <!-- STATIC STYLE -->
     <link rel="stylesheet" href="../css/main.css">
 
-    <!-- JAVASCRIPT LINK read -> defer -->
-    <script defer src="../js/index.js"></script>
-    <script defer src="../js/moment.js"></script>
-    <script defer src="../js/form.js"></script>
-    <script defer src="../js/simulador.js"></script>
+
 
     <!-- EXTERNAL SOURCES -->
-    <!-- <script  src="../bancosDB/bancos.json"></script> -->
+    <!-- <script  src="../bancosDB/bancos.json" type="module"></script> -->
+
+    <!-- JAVASCRIPT LINK read -> defer -->
+    
+    <script defer src="../js/moment.js"></script>
+    <!-- <script defer src="cleave.min.js"></script> -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script defer src="../js/index.js"></script>
+    <script defer src="../js/form.js"></script>
+    <script defer src="../js/simulador.js"></script>
+    <script defer src="../js/usuario.js"></script>
+
+    
 
     <title>Emprendiendo</title>
 </head>
@@ -66,15 +74,15 @@
     <!-- ************************ CONTENIDO ****************************** -->
 
     <div class="form-div">
-        <form class="form-simulator">
+        <form class="form-simulator" method="GET" action="#">
             <h2>Simulador de financiamiento</h2>
             <div class="form-datos">
                 <div class="form-datos-identificacion">
-                    <label class="form-label" id="nombreEmpresa">Nombre de la empresa:
-                        <input type="text">
+                    <label class="form-label">Nombre de la empresa:
+                        <input type="text" id="nombreEmpresa" required="required" >
                     </label>
                     <label class="form-label" >Número de empleados:
-                        <input type="number" id="numeroEmpleados">
+                        <input type="number" id="numeroEmpleados" required="required" min="0">
                     </label>
                 </div>
                 <div class="form-datos-financieros">
@@ -107,7 +115,7 @@
                 <p>Escoga el tipo de financiador</p>
                 <div>
                     <label id="checkBancos">Bancos
-                        <input type="checkbox" name="check" onclick="onlyOne(this)" />
+                        <input type="checkbox" name="check" onclick="onlyOne(this)" checked="checked" />
                         <i class="fa-solid fa-building-columns fa-5x"></i>
                     </label>
 
@@ -121,30 +129,35 @@
         </form>
     </div>
 
+    <!-- "POOPUP" -->
     <div class="ofertas">
         <div class="ofertas-bancos">
+            <span>Seleccione el banco de su preferencia</span>
             <form class="ofertas-list" id="listaOfertas" style="list-style-type: none;">
+                
             </form>
         </div>
         <div class="ofertas-info">
-            <button type="button" id="bttnClosesimulador" onclick="cerrar()">cerrar</button>
+            <button type="button" id="bttnClosesimulador" onclick="cerrar()">X</button>
             <div class="ofertas-info-empresa" id="tamañoEmpresa">
-                <p>Tu empresa es:</p>
+                <p>El tamaño de su empresa es:</p>
             </div>
             <div class="ofertas-form">
                 <form id ='tablaSimulador' method="GET">
                     <label for="monto">Monto a solicitar
-                        <input type='number' id='monto'/>
+                        <input type='number' id='monto' class='monto'/>
                     </label>
                     <label for="plazo">Plazo del finaciamiento en meses
-                        <input type='number' id='plazo'/>
+                        <input type='number' id='plazo' max="60"/>
                     </label>
                     <input type = 'submit' value="Calcular" id="calcular">
+                    <button type="button" id="registerButton">Enviar</button>
                 </form>
             </div>
         </div>
     </div>
 
+    <!-- TABLA DE AMORTIZACIÓN DE LA SIMULACIÓN -->
     <div class="amortizacion">
         <table id="lista-tabla" class="table">
             <thead>

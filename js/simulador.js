@@ -1,6 +1,6 @@
 
-const buttonSimulador = document.getElementById('bttnSimulador')
-const Simulador = document.getElementById('tablaSimulador')
+const buttonSimulador = document.getElementById('bttnSimulador');
+const Simulador = document.getElementById('tablaSimulador');
 const llenarTabla = document.querySelector("#lista-tabla tbody");
 
 const companyName = document.getElementById('nombreEmpresa');
@@ -10,25 +10,25 @@ const companySector = document.getElementById('CIIU');
 const monto = document.getElementById('monto');
 const plazo = document.getElementById('plazo');
 
-function sizeCompany(companyEmpoyees){
+function sizeCompany(companyEmpoyees) {
     const tamaño = document.getElementById('tamañoEmpresa');
     while (tamaño.children[1]) {
         tamaño.removeChild(tamaño.children[1]);
     }
 
-    if (  companyEmpoyees >= 0 && companyEmpoyees <= 5){
+    if (companyEmpoyees >= 0 && companyEmpoyees <= 5) {
         sizeCo = 'Micro';
-    } else if ( companyEmpoyees > 5 && companyEmpoyees <= 10){
+    } else if (companyEmpoyees > 5 && companyEmpoyees <= 10) {
         sizeCo = 'Pequeña';
-    } else if ( companyEmpoyees > 10 && companyEmpoyees <= 25){
+    } else if (companyEmpoyees > 10 && companyEmpoyees <= 25) {
         sizeCo = 'Mediana';
-    } else if ( companyEmpoyees > 25){
+    } else if (companyEmpoyees > 25) {
         sizeCo = 'Grande';
     } else {
         sizeCo = companyEmpoyees
     }
 
-    
+
     const size = document.createElement('p');
     size.innerHTML = `${sizeCo}`;
     tamaño.appendChild(size)
@@ -41,7 +41,7 @@ function sizeCompany(companyEmpoyees){
 function calcularCuota(monto, interes, tiempo) {
 
     // La tasa es EA se pasa a períodico
-    interes = Math.pow(1+(interes/100),(1/12))-1
+    interes = Math.pow(1 + (interes / 100), (1 / 12)) - 1
     const capital = monto
 
     while (llenarTabla.firstChild) {
@@ -84,26 +84,28 @@ function calcularCuota(monto, interes, tiempo) {
 
 
 
-buttonSimulador.addEventListener('click',()=>{
+buttonSimulador.addEventListener('click', () => {
     document.getElementsByClassName('ofertas')[0].style.display = 'flex';
+    document.body.style.backgroundColor = "rgb(218, 218, 218)";
     size = sizeCompany(companyEmpoyees.value);
     insertOptions(size);
 })
 
-function cerrar(){
+function cerrar() {
     document.getElementsByClassName('ofertas')[0].style.display = 'none';
+    document.body.style.backgroundColor = "white"
 }
 
-Simulador.addEventListener('submit',function(e){
+Simulador.addEventListener('submit', function (e) {
     e.preventDefault();
     const Op = document.getElementsByName('options');
-    Op.forEach((item)=>{
+    Op.forEach((item) => {
         if (item.checked == true) {
             tasa = item.value;
         }
     });
 
-    calcularCuota(parseInt(monto.value),parseFloat(tasa),parseInt(plazo.value))
-    
-})    
+    calcularCuota(parseInt(monto.value), parseFloat(tasa), parseInt(plazo.value))
+
+})
 
