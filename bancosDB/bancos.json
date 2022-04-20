@@ -1,0 +1,14 @@
+[
+        {
+            "Banco" : "Bancolombia",
+            "Tasa"  : 0.06
+        },
+        {
+            "Banco" : "BBVA",
+            "Tasa"  : 0.08
+        },
+        {
+            "Banco" : "Citi",
+            "Tasa"  : 0.05
+        }
+]

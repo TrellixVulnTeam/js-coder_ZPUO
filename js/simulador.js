@@ -5,6 +5,7 @@ let tasa = null;
 
 const llenarTabla = document.querySelector("#lista-tabla tbody");
 const divTabla = document.getElementsByClassName('amortización');
+const tablaOfertas = document.getElementById('listaOfertas')
 
 
 const buttonTasa = document.querySelectorAll('.list-group-button');
@@ -151,6 +152,22 @@ buttonSimular.addEventListener('click', () => {
         monto.value = window.localStorage.getItem('Monto')
     }
 
+    fetch('../bancosDB/bancos.json')
+        .then((res) => res.json())
+        .then((data) => {
+            
+            data.forEach((banco) => {
+                const oferta = document.createElement('li');
+                oferta.innerHTML = `<button class="list-group-button" onclick="selectTasa(this);">
+                                    <div class="text-success">
+                                        <h6 class="my-0">${banco.Banco}</h6>
+                                        <small>Préstamo para pequeña empresa</small>
+                                    </div>
+                                    <span class="text-success">${banco.Tasa}/span>
+                                </button> `
+                tablaOfertas.appendChild(oferta)
+            })
+        })
 });
 
 
