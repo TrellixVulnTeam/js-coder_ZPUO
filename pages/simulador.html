@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- STYLESHEET -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://fonts.sandbox.google.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    <!-- FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/328858abb8.js" crossorigin="anonymous"></script>
+
+    <!-- SCRIPTS -->
+    <script defer src="../js/index.js"></script>
+    <script defer src="../js/simulador.js"></script>
+    <title>Emprendiendo</title>
+</head>
+<body>
+    <header class="main-head fluid">
+        <h1>Emprendiendo</h1>
+        <nav class="nav-bar">
+            <button id="buttonMenu" onclick="showMenu(this)">
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+            </button>
+            <div id="nav-menu-container">
+                <ul class="nav-ul">
+                    <li class="nav-li">
+                        <a class="nav-href" id="hrefInicio" href="./index.html">
+                            Inicio
+                        </a>
+                    </li>
+                    <li class="nav-li">
+                        <a class="nav-href" id="hrefSimulador" href="./simulador.html">
+                            simulador
+                        </a>
+                    </li>
+                </ul>
+                <button id="closeMenu" onclick="closeMenu(this)">
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-main">
+        <div class="container-form">
+            <form class="input-form" id="inputForm">
+                <div class="input-form-div" id = 'divFormEmpleados' tabindex="1">
+                    <label class='input-form-label' for="empleados">
+                        Cantidad de empleados
+                    </label>
+                    <input class='input-form-input' id = "empleados" name="empleados" type="number" min="0" placeholder="5" required>
+                </div>
+                <div class="input-form-div" id = 'divFormSector'>
+                    <label class='input-form-label' for="sector">
+                        Sector
+                    </label>
+                    <select class='input-form-input' id="sector" name="sector" required>
+                        <option value="Agrículura">Agriculura</option>
+                        <option value="Hotelería y turismo">Hotelería y turismo</option>
+                        <option value="Financiero">Financiero</option>
+                        <option value="Industrial">Industrial</option>
+                        <option value="Tecnológico">Tecnológico</option>
+                        <option value="Tecnológico">Otro</option>
+                    </select>
+                </div>
+                
+                <div class="input-form-div" id = 'divFormIngresos'>
+                    <label class='input-form-label' for="ingresos">
+                        Ingresos del último año
+                    </label>
+                    <select class='input-form-input' id="ingresos" name="ingresos" required>
+                        <option value="Entre 0 y 10 millones">Entre 0 y 10 millones</option>
+                        <option value="Entre 11 y 25 millones">Entre 11 y 25 millones</option>
+                        <option value="Entre 26 y 50 millones">Entre 26 y 50 millones</option>
+                        <option value="Entre 51 y 100 millones">Entre 51 y 100 millones</option>
+                        <option value="Entre 101 y 500 millones">Entre 101 y 500 millones</option>
+                        <option value="Más de 500 millones">Más de 500 millones</option>
+                    </select>
+                </div>
+                <div class="input-form-div" id = 'divFormGastos'>
+                    <label class='input-form-label' for="gastos">
+                        Gastos del último año
+                    </label>
+                    <select class='input-form-input' id="gastos" name="gastos" required>
+                        <option value="Entre 0 y 10 millones">Entre 0 y 10 millones</option>
+                        <option value="Entre 11 y 25 millones">Entre 11 y 25 millones</option>
+                        <option value="Entre 26 y 50 millones">Entre 26 y 50 millones</option>
+                        <option value="Entre 51 y 100 millones">Entre 51 y 100 millones</option>
+                        <option value="Entre 101 y 500 millones">Entre 101 y 500 millones</option>
+                        <option value="Más de 500 millones">Más de 500 millones</option>
+                    </select>
+                </div>
+                <div class="input-form-div" id = 'divFormSubmit'>
+                    <input type="submit" value="Ver ofertas" id="buttonVerOfertas">
+                </div>
+            </form>
+        </div>
+        <div class="container-ofertas">
+            <h3>Lista de ofertas</h3>
+            <ul class="ofertas-ul" id="ofertasUl">
+                <li>
+                    <p>Completa los datos para mostrate ofertas</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <!-- ************************************************************** -->
+    <!-- ************************ FOOTER ****************************** -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-container-links">
+                <a href="http://facebook.com" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-facebook-square fa-2x"></i>
+                </a>
+                <a href="http://instagram.com" target="_blank" rel="noopener">
+                    <i class="fa-brands fa-instagram fa-2x"></i>
+                </a>
+                <a href="./contactus.html" rel="noopener">
+                    <i class="fa-brands fa-whatsapp-square fa-2x"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

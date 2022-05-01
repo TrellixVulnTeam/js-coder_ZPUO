@@ -1,0 +1,61 @@
+{
+    "Micro" : [
+        {
+            "Banco" : "Bancolombia",
+            "Tasa"  : 0.06
+        },
+        {
+            "Banco" : "BBVA",
+            "Tasa"  : 0.08
+        },
+        {
+            "Banco" : "Citi",
+            "Tasa"  : 0.05
+        }
+    ],
+
+    "Pequeña": [
+        {
+            "Banco" : "Bancolombia",
+            "Tasa"  : 0.08
+        },
+        {
+            "Banco" : "BBVA",
+            "Tasa"  : 0.10
+        },
+        {
+            "Banco" : "Citi",
+            "Tasa"  : 0.12
+        }
+    ],
+
+    "Mediana": [
+        {
+            "Banco" : "Bancolombia",
+            "Tasa"  : 0.15
+        },
+        {
+            "Banco" : "BBVA",
+            "Tasa"  : 0.13
+        },
+        {
+            "Banco" : "Citi",
+            "Tasa"  : 0.14
+        }
+    ],
+
+    "Grande": [
+        {
+            "Banco" : "Bancolombia",
+            "Tasa"  : 0.25
+        },
+        {
+            "Banco" : "BBVA",
+            "Tasa"  : 0.25
+        },
+        {
+            "Banco" : "Citi",
+            "Tasa"  : 0.23
+        }
+    ]
+}

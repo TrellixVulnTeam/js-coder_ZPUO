@@ -1,0 +1,165 @@
+body {
+    display: grid;
+    grid-template-areas:
+    "hd   hd   hd   hd   hd   hd   hd   hd   hd   hd   hd   hd"
+    ".    .    main main main main main  main  main  main  .    ."
+    "ft   ft   ft   ft   ft   ft   ft   ft   ft   ft   ft   ft";
+    font-family: map-get($fuentes, font-family);
+    font-size: 20px;
+    color: map-get($fuentes, font-color-primary);
+    margin: 0;
+    padding: 0;
+
+    a {
+        text-decoration: none;
+        color: map-get($fuentes, font-color-primary);
+    }
+
+    h1 {
+        font-size: 28px;
+        margin: 0;
+    }
+    
+    .main-head {
+        background-color: rgba(240, 238, 238, .6);
+        grid-area: hd;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px;
+        height: 3rem;
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin: 10px;
+            button {
+                display: inherit;
+                justify-self: flex-end;
+                align-items: center;
+                padding: 0;
+                background-color: transparent;
+                border: 0;
+            }
+            #nav-menu-container {
+                display: none;
+                position: absolute;
+                top: calc(4rem);
+                left: 0;
+                background-color: map-get($colores, grey-dark);
+                width: 100%;
+                height: 100%;
+                .nav-ul {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    margin: 0;
+                    padding: 0;
+                    background-color: transparent;
+                    list-style-type: none;
+                    width: 100%;
+                    height: 20%;
+                    .nav-li {
+                        background-color: transparent;
+                        margin: 10px;
+                        padding-left: 15px;
+                        width: 100%;
+                        height: 100%;
+                        a {
+                            color: white;
+                        }
+                        a:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+        
+                button {
+                    display: flex;
+                    align-items: flex-start;
+                    background-color: transparent;
+                    border: 0;
+                    padding: 0;
+                    margin: 0;
+                    height: 20%;
+                    padding-top: 10px;
+                    padding-right: 20px;
+                    color: white;
+                }
+                
+            }
+        }
+    }
+
+
+    .container-main {
+        grid-area: main;
+        height: 40rem;
+    }
+    .footer{
+        grid-area: ft;
+    }
+    .material-symbols-outlined {
+        font-variation-settings:
+        'FILL' 0,
+        'wght' 1200,
+        'GRAD' 0,
+        'opsz' 50
+    }
+
+}
+
+
+@include mediaQuery(tablet){
+    body {
+        background-color: transparent;
+        .main-head {
+            .nav-bar {
+                display: flex;
+                button {
+                    display: none;
+                }
+                #nav-menu-container {
+                    display: flex !important;
+                    justify-content: flex-end;
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    background-color: transparent;
+                    .nav-ul {
+                        flex-direction: row;
+                        .nav-li {
+                            display: inherit;
+                            justify-content: flex-end;
+                            margin-right: 15px;
+                            padding-left: 10px;
+                            a {
+                                color: map-get($fuentes, font-color-primary) ;
+                            }
+                        }
+                    }
+                    button {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .fluid {
+            padding: 0 80px 0 80px;
+        }
+    }    
+}
+
+@include mediaQuery(desktop){
+    body {
+        background-color: white;
+
+        .fluid {
+            padding: 0 150px 0 150px;
+        }
+    }
+    
+}

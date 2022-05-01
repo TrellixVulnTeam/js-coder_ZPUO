@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap");
+body {
+  display: grid;
+  grid-template-areas: "hd   hd   hd   hd   hd   hd   hd   hd   hd   hd   hd   hd" ".    .    main main main main main  main  main  main  .    ." "ft   ft   ft   ft   ft   ft   ft   ft   ft   ft   ft   ft";
+  font-family: "Roboto Slab";
+  font-size: 20px;
+  color: #333;
+  margin: 0;
+  padding: 0; }
+  body a {
+    text-decoration: none;
+    color: #333; }
+  body h1 {
+    font-size: 28px;
+    margin: 0; }
+  body .main-head {
+    background-color: rgba(240, 238, 238, 0.6);
+    grid-area: hd;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    height: 3rem; }
+    body .main-head .nav-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      margin: 10px; }
+      body .main-head .nav-bar button {
+        display: inherit;
+        justify-self: flex-end;
+        align-items: center;
+        padding: 0;
+        background-color: transparent;
+        border: 0; }
+      body .main-head .nav-bar #nav-menu-container {
+        display: none;
+        position: absolute;
+        top: calc(4rem);
+        left: 0;
+        background-color: #333;
+        width: 100%;
+        height: 100%; }
+        body .main-head .nav-bar #nav-menu-container .nav-ul {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          margin: 0;
+          padding: 0;
+          background-color: transparent;
+          list-style-type: none;
+          width: 100%;
+          height: 20%; }
+          body .main-head .nav-bar #nav-menu-container .nav-ul .nav-li {
+            background-color: transparent;
+            margin: 10px;
+            padding-left: 15px;
+            width: 100%;
+            height: 100%; }
+            body .main-head .nav-bar #nav-menu-container .nav-ul .nav-li a {
+              color: white; }
+            body .main-head .nav-bar #nav-menu-container .nav-ul .nav-li a:hover {
+              text-decoration: underline; }
+        body .main-head .nav-bar #nav-menu-container button {
+          display: flex;
+          align-items: flex-start;
+          background-color: transparent;
+          border: 0;
+          padding: 0;
+          margin: 0;
+          height: 20%;
+          padding-top: 10px;
+          padding-right: 20px;
+          color: white; }
+  body .container-main {
+    grid-area: main;
+    height: 40rem; }
+  body .footer {
+    grid-area: ft; }
+  body .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 1200, 'GRAD' 0, 'opsz' 50; }
+
+@media only screen and (min-width: 768px) {
+  body {
+    background-color: transparent; }
+    body .main-head .nav-bar {
+      display: flex; }
+      body .main-head .nav-bar button {
+        display: none; }
+      body .main-head .nav-bar #nav-menu-container {
+        display: flex !important;
+        justify-content: flex-end;
+        position: relative;
+        top: 0;
+        left: 0;
+        background-color: transparent; }
+        body .main-head .nav-bar #nav-menu-container .nav-ul {
+          flex-direction: row; }
+          body .main-head .nav-bar #nav-menu-container .nav-ul .nav-li {
+            display: inherit;
+            justify-content: flex-end;
+            margin-right: 15px;
+            padding-left: 10px; }
+            body .main-head .nav-bar #nav-menu-container .nav-ul .nav-li a {
+              color: #333; }
+        body .main-head .nav-bar #nav-menu-container button {
+          display: none; }
+    body .fluid {
+      padding: 0 80px 0 80px; } }
+
+@media only screen and (min-width: 992px) {
+  body {
+    background-color: white; }
+    body .fluid {
+      padding: 0 150px 0 150px; } }
+
+body {
+  grid-template-areas: "hd   hd   hd   hd   hd   hd   hd   hd   hd   hd   hd   hd" "main main main main main main main  main  main  main  main  main" "ft   ft   ft   ft   ft   ft   ft   ft   ft   ft   ft   ft"; }
+  body .container-main {
+    background-color: transparent; }
+    body .container-main .container-form {
+      display: flex;
+      justify-content: center;
+      margin: 20px; }
+      body .container-main .container-form #inputForm {
+        display: grid;
+        grid-template-areas: "A1" "A2" "A3" "A4"; }
+        body .container-main .container-form #inputForm #divFormEmpleados {
+          grid-area: A1;
+          display: flex;
+          flex-direction: column; }
+          body .container-main .container-form #inputForm #divFormEmpleados input {
+            width: 200px; }
+        body .container-main .container-form #inputForm #divFormSector {
+          grid-area: A2;
+          display: flex;
+          flex-direction: column; }
+          body .container-main .container-form #inputForm #divFormSector select {
+            width: 222px; }
+            body .container-main .container-form #inputForm #divFormSector select option:hover {
+              color: rgba(171, 171, 171, 0.6);
+              background-color: #72bcf4; }
+        body .container-main .container-form #inputForm #divFormIngresos {
+          grid-area: A3;
+          display: flex;
+          flex-direction: column; }
+          body .container-main .container-form #inputForm #divFormIngresos select {
+            width: 222px; }
+            body .container-main .container-form #inputForm #divFormIngresos select option:hover {
+              color: rgba(171, 171, 171, 0.6);
+              background-color: #72bcf4; }
+        body .container-main .container-form #inputForm #divFormGastos {
+          grid-area: A4;
+          display: flex;
+          flex-direction: column; }
+          body .container-main .container-form #inputForm #divFormGastos select {
+            width: 222px; }
+            body .container-main .container-form #inputForm #divFormGastos select option:hover {
+              color: rgba(171, 171, 171, 0.6);
+              background-color: #72bcf4; }
+        body .container-main .container-form #inputForm #divFormSubmit {
+          display: flex;
+          justify-content: center;
+          width: 100%; }
+        body .container-main .container-form #inputForm .input-form-label {
+          color: #333;
+          font-weight: bold; }
+        body .container-main .container-form #inputForm .input-form-input {
+          border: 2px solid rgba(171, 171, 171, 0.6);
+          margin: 5px 7px;
+          padding: 5px 10px 5px 10px;
+          width: 70%;
+          background: white;
+          border-radius: 3px; }
+        body .container-main .container-form #inputForm .input-form-div {
+          margin-top: 5px; }
+        body .container-main .container-form #inputForm .input-form-input::placeholder {
+          color: #ababab; }
+        body .container-main .container-form #inputForm .input-form-input:focus {
+          border-color: #49c6f0;
+          outline-color: #72bcf4;
+          outline-offset: 2px; }
+        body .container-main .container-form #inputForm input[type=submit] {
+          background-color: #0291ff;
+          border: 1px solid #72bcf4;
+          box-shadow: 2px 2px 2px #d8d8d8;
+          border-radius: 4px;
+          width: 100%;
+          height: 40px;
+          margin-top: 5px;
+          margin-right: 5px;
+          color: white;
+          font-size: 20px; }
+        body .container-main .container-form #inputForm input[type=submit]:hover {
+          background-color: #ff8902;
+          border: 1px solid #ff8902; }
+    body .container-main .container-ofertas {
+      display: flex;
+      flex-direction: column;
+      align-items: center; }
+      body .container-main .container-ofertas .ofertas-ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 300px; }
+        body .container-main .container-ofertas .ofertas-ul li {
+          width: 100%;
+          text-align: center; }
+          body .container-main .container-ofertas .ofertas-ul li button {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid grey;
+            margin-top: 1px;
+            border-radius: 3px;
+            border-color: #ababab;
+            width: 100%;
+            background-color: transparent; }
+            body .container-main .container-ofertas .ofertas-ul li button div {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start; }
+              body .container-main .container-ofertas .ofertas-ul li button div h4 {
+                margin: 5px; }
+            body .container-main .container-ofertas .ofertas-ul li button span {
+              justify-self: flex-end; }
+          body .container-main .container-ofertas .ofertas-ul li button:focus {
+            background-color: orange; }
