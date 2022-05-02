@@ -78,7 +78,26 @@ body {
     grid-area: main;
     height: 40rem; }
   body .footer {
-    grid-area: ft; }
+    grid-area: ft;
+    width: 100%;
+    height: 100%;
+    /* Height of the footer */
+    background: #263F5B;
+    z-index: 10;
+    margin-top: 25px; }
+    body .footer .footer-container {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 100%;
+      height: 100%; }
+      body .footer .footer-container-links {
+        display: flex;
+        align-items: center; }
+        body .footer .footer-container-links .fa-facebook-square, body .footer .footer-container-links .fa-whatsapp-square, body .footer .footer-container-links .fa-instagram {
+          background-color: transparent;
+          color: #e7eaeb;
+          margin: 0 20px; }
   body .material-symbols-outlined {
     font-variation-settings: 'FILL' 0, 'wght' 1200, 'GRAD' 0, 'opsz' 50; }
 
@@ -114,10 +133,10 @@ body {
   body {
     background-color: white; }
     body .fluid {
-      padding: 0 150px 0 150px; } }
+      padding: 0 250px 0 250px; } }
 
 body {
-  grid-template-areas: "hd   hd   hd   hd   hd   hd   hd   hd   hd   hd   hd   hd" "main main main main main main main  main  main  main  main  main" "ft   ft   ft   ft   ft   ft   ft   ft   ft   ft   ft   ft"; }
+  grid-template-areas: "hd   hd   hd   hd   hd   hd   hd   hd   hd   hd   hd   hd" "main main main main main main main  main  main  main  main  main" "sim sim sim sim sim sim sim  sim  sim  sim  sim  sim" "tab tab tab tab tab tab tab  tab  tab  tab  tab  tab" "ft   ft   ft   ft   ft   ft   ft   ft   ft   ft   ft   ft"; }
   body .container-main {
     background-color: transparent; }
     body .container-main .container-form {
@@ -164,38 +183,6 @@ body {
           display: flex;
           justify-content: center;
           width: 100%; }
-        body .container-main .container-form #inputForm .input-form-label {
-          color: #333;
-          font-weight: bold; }
-        body .container-main .container-form #inputForm .input-form-input {
-          border: 2px solid rgba(171, 171, 171, 0.6);
-          margin: 5px 7px;
-          padding: 5px 10px 5px 10px;
-          width: 70%;
-          background: white;
-          border-radius: 3px; }
-        body .container-main .container-form #inputForm .input-form-div {
-          margin-top: 5px; }
-        body .container-main .container-form #inputForm .input-form-input::placeholder {
-          color: #ababab; }
-        body .container-main .container-form #inputForm .input-form-input:focus {
-          border-color: #49c6f0;
-          outline-color: #72bcf4;
-          outline-offset: 2px; }
-        body .container-main .container-form #inputForm input[type=submit] {
-          background-color: #0291ff;
-          border: 1px solid #72bcf4;
-          box-shadow: 2px 2px 2px #d8d8d8;
-          border-radius: 4px;
-          width: 100%;
-          height: 40px;
-          margin-top: 5px;
-          margin-right: 5px;
-          color: white;
-          font-size: 20px; }
-        body .container-main .container-form #inputForm input[type=submit]:hover {
-          background-color: #ff8902;
-          border: 1px solid #ff8902; }
     body .container-main .container-ofertas {
       display: flex;
       flex-direction: column;
@@ -204,7 +191,9 @@ body {
         list-style-type: none;
         margin: 0;
         padding: 0;
-        width: 300px; }
+        width: 300px;
+        height: 200px;
+        overflow-y: scroll; }
         body .container-main .container-ofertas .ofertas-ul li {
           width: 100%;
           text-align: center; }
@@ -214,7 +203,9 @@ body {
             align-items: center;
             justify-content: space-between;
             border: 1px solid grey;
-            margin-top: 1px;
+            margin-top: 2px;
+            margin-bottom: 4px;
+            padding-bottom: 4px;
             border-radius: 3px;
             border-color: #ababab;
             width: 100%;
@@ -227,5 +218,109 @@ body {
                 margin: 5px; }
             body .container-main .container-ofertas .ofertas-ul li button span {
               justify-self: flex-end; }
+          body .container-main .container-ofertas .ofertas-ul li button:hover {
+            background-color: #0291ff; }
           body .container-main .container-ofertas .ofertas-ul li button:focus {
             background-color: orange; }
+  body #simuladorCuota {
+    display: none;
+    grid-area: sim;
+    margin: 20px;
+    height: 10rem; }
+    body #simuladorCuota div {
+      display: flex;
+      justify-content: center; }
+      body #simuladorCuota div form {
+        display: grid;
+        width: 80%;
+        grid-template-areas: "m p" "s s"; }
+        body #simuladorCuota div form #divFormMonto {
+          grid-area: m;
+          display: flex;
+          flex-direction: column;
+          width: 100%; }
+          body #simuladorCuota div form #divFormMonto input {
+            width: 50%; }
+        body #simuladorCuota div form #divFormPlazo {
+          grid-area: p;
+          display: flex;
+          flex-direction: column;
+          width: 100%; }
+          body #simuladorCuota div form #divFormPlazo input {
+            width: 50%; }
+        body #simuladorCuota div form #divFormSubmit {
+          grid-area: s; }
+          body #simuladorCuota div form #divFormSubmit input[type=submit] {
+            background-color: #0291ff;
+            border: 1px solid #72bcf4;
+            box-shadow: 2px 2px 2px #d8d8d8;
+            border-radius: 4px;
+            width: 100%;
+            height: 40px;
+            margin-top: 5px;
+            margin-right: 5px;
+            color: white;
+            font-size: 20px; }
+  body .amortizacion {
+    grid-area: tab;
+    display: none;
+    justify-content: center;
+    width: 100%;
+    height: 20rem;
+    overflow: scroll;
+    background-color: white;
+    border-radius: 5px; }
+    body .amortizacion #lista-tabla {
+      width: 90%;
+      font-family: Arial, Helvetica, sans-serif;
+      border-collapse: collapse; }
+    body .amortizacion #lista-tabla td,
+    body .amortizacion #lista-tabla th {
+      border: 1px solid #ddd;
+      padding: 8px; }
+    body .amortizacion #lista-tabla tr:nth-child(even) {
+      background-color: #f2f2f2; }
+    body .amortizacion #lista-tabla tr:hover {
+      background-color: #ddd; }
+    body .amortizacion #lista-tabla th {
+      padding-top: 12px;
+      padding-bottom: 12px;
+      text-align: left;
+      background-color: #263F5B;
+      color: white;
+      font-size: calc(1rem - 5px); }
+  body .input-form-label {
+    color: #333;
+    font-weight: bold; }
+  body .input-form-input {
+    border: 2px solid rgba(171, 171, 171, 0.6);
+    margin: 5px 7px;
+    padding: 5px 10px 5px 10px;
+    width: 70%;
+    background: white;
+    border-radius: 3px; }
+  body .input-form-div {
+    margin-top: 5px; }
+  body .input-form-input::placeholder {
+    color: #ababab; }
+  body .input-form-input:focus {
+    border-color: #49c6f0;
+    outline-color: #72bcf4;
+    outline-offset: 2px; }
+  body input[type=submit] {
+    background-color: #0291ff;
+    border: 1px solid #72bcf4;
+    box-shadow: 2px 2px 2px #d8d8d8;
+    border-radius: 4px;
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+    margin-right: 5px;
+    color: white;
+    font-size: 20px; }
+  body input[type=submit]:hover {
+    background-color: #e29b49;
+    border: 1px solid #ff8902; }
+  body input[type=submit]:focus {
+    background-color: #ff8902;
+    border: 1px solid #ff8902; }

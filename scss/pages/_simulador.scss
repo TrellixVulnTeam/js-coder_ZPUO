@@ -1,22 +1,26 @@
 body {
     grid-template-areas:
-    "hd   hd   hd   hd   hd   hd   hd   hd   hd   hd   hd   hd"
-    "main main main main main main main  main  main  main  main  main"
-    "ft   ft   ft   ft   ft   ft   ft   ft   ft   ft   ft   ft";
+        "hd   hd   hd   hd   hd   hd   hd   hd   hd   hd   hd   hd"
+        "main main main main main main main  main  main  main  main  main"
+        "sim sim sim sim sim sim sim  sim  sim  sim  sim  sim"
+        "tab tab tab tab tab tab tab  tab  tab  tab  tab  tab"
+        "ft   ft   ft   ft   ft   ft   ft   ft   ft   ft   ft   ft";
 
-    .container-main{
+    .container-main {
         background-color: transparent;
+
         .container-form {
             display: flex;
             justify-content: center;
             margin: 20px;
-            #inputForm{
+
+            #inputForm {
                 display: grid;
-                grid-template-areas: 
-                "A1"
-                "A2"
-                "A3"
-                "A4";
+                grid-template-areas:
+                    "A1"
+                    "A2"
+                    "A3"
+                    "A4";
 
                 #divFormEmpleados {
                     grid-area: A1;
@@ -32,10 +36,12 @@ body {
                     grid-area: A2;
                     display: flex;
                     flex-direction: column;
+
                     select {
                         width: 222px;
+
                         option:hover {
-                            color: rgba(171, 171, 171,.6);
+                            color: rgba(171, 171, 171, .6);
                             background-color: #72bcf4;
                         }
                     }
@@ -45,10 +51,12 @@ body {
                     grid-area: A3;
                     display: flex;
                     flex-direction: column;
+
                     select {
                         width: 222px;
+
                         option:hover {
-                            color: rgba(171, 171, 171,.6);
+                            color: rgba(171, 171, 171, .6);
                             background-color: #72bcf4;
                         }
                     }
@@ -58,10 +66,12 @@ body {
                     grid-area: A4;
                     display: flex;
                     flex-direction: column;
+
                     select {
                         width: 222px;
+
                         option:hover {
-                            color: rgba(171, 171, 171,.6);
+                            color: rgba(171, 171, 171, .6);
                             background-color: #72bcf4;
                         }
                     }
@@ -72,54 +82,6 @@ body {
                     justify-content: center;
                     width: 100%;
                 }
-
-                .input-form-label {
-                    color: map-get($fuentes , font-color-primary);
-                    font-weight: bold;
-                }
-
-                .input-form-input {
-                    border: 2px solid rgba(171, 171, 171,.6);
-                    margin: 5px 7px;
-                    padding: 5px 10px 5px 10px;
-                    width: 70%;
-                    background: white;
-                    border-radius: 3px;
-                    // box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
-                }
-
-                .input-form-div{
-                    margin-top: 5px;
-                }
-
-                .input-form-input::placeholder {
-                    color: rgba(171, 171, 171,1);
-                    // box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
-                }
-
-                .input-form-input:focus{
-                    border-color: #49c6f0;
-                    outline-color: #72bcf4;
-                    outline-offset: 2px;
-                }
-
-                input[type=submit] {
-                    background-color: #0291ff;
-                    border: 1px solid #72bcf4;
-                    box-shadow: 2px 2px 2px rgb(216, 216, 216);
-                    border-radius: 4px;
-                    width: 100%;
-                    height: 40px;
-                    margin-top: 5px;
-                    margin-right: 5px;
-                    color: white;
-                    font-size: 20px;
-                }
-
-                input[type=submit]:hover {
-                    background-color: #ff8902;
-                    border: 1px solid #ff8902;
-                }
             }
         }
 
@@ -127,43 +89,218 @@ body {
             display: flex;
             flex-direction: column;
             align-items: center;
+
             .ofertas-ul {
                 list-style-type: none;
-                margin:0;
-                padding:0;
+                margin: 0;
+                padding: 0;
                 width: 300px;
+                height: 200px;
+                overflow-y: scroll;
+
                 li {
                     width: 100%;
                     text-align: center;
+
                     button {
                         display: flex;
                         flex-direction: row;
                         align-items: center;
                         justify-content: space-between;
-                        
+
                         border: 1px solid grey;
-                        margin-top: 1px;
+                        margin-top: 2px;
+                        margin-bottom: 4px;
+                        padding-bottom: 4px;
                         border-radius: 3px;
-                        border-color: rgba(171, 171, 171,1);
+                        border-color: rgba(171, 171, 171, 1);
                         width: 100%;
                         background-color: transparent;
+
                         div {
                             display: flex;
                             flex-direction: column;
                             align-items: flex-start;
+
                             h4 {
-                                margin:5px;
+                                margin: 5px;
                             }
                         }
+
                         span {
                             justify-self: flex-end;
                         }
                     }
-                    button:focus{
+
+                    button:hover {
+                        background-color: #0291ff;
+                    }
+
+                    button:focus {
                         background-color: orange;
                     }
                 }
             }
         }
     }
+
+    #simuladorCuota {
+        display: none;
+        grid-area: sim;
+        margin: 20px;
+        height: 10rem;
+
+        div {
+            display: flex;
+            justify-content: center;
+
+            form {
+                display: grid;
+                width: 80%;
+                grid-template-areas:
+                    "m p"
+                    "s s";
+
+                #divFormMonto {
+                    grid-area: m;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    input {
+                        width: 50%;
+                    }
+                }
+
+                #divFormPlazo {
+                    grid-area: p;
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+
+                    input {
+                        width: 50%;
+                    }
+                }
+
+                #divFormSubmit {
+                    grid-area: s;
+
+                    input[type=submit] {
+                        background-color: #0291ff;
+                        border: 1px solid #72bcf4;
+                        box-shadow: 2px 2px 2px rgb(216, 216, 216);
+                        border-radius: 4px;
+                        width: 100%;
+                        height: 40px;
+                        margin-top: 5px;
+                        margin-right: 5px;
+                        color: white;
+                        font-size: 20px;
+                    }
+                }
+
+            }
+        }
+
+        
+    }
+
+
+    .amortizacion {
+        grid-area: tab;
+        display: none;
+        justify-content: center;
+        width: 100%;
+        height: 20rem;
+        overflow: scroll;
+        background-color: white;
+        border-radius: 5px;
+        #lista-tabla {
+            width: 90%;
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+        }
+
+        #lista-tabla td,
+        #lista-tabla th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #lista-tabla tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #lista-tabla tr:hover {
+            background-color: #ddd;
+        }
+
+        #lista-tabla th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: map-get($colores, blue-dark );
+            color: white;
+            font-size: calc(1rem - 5px);
+        }
+    }
+
+
+    // ESTILOS DE ELEMENTOS GENERALES
+
+    .input-form-label {
+        color: map-get($fuentes, font-color-primary);
+        font-weight: bold;
+    }
+
+    .input-form-input {
+        border: 2px solid rgba(171, 171, 171, .6);
+        margin: 5px 7px;
+        padding: 5px 10px 5px 10px;
+        width: 70%;
+        background: white;
+        border-radius: 3px;
+        // box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .input-form-div {
+        margin-top: 5px;
+    }
+
+    .input-form-input::placeholder {
+        color: rgba(171, 171, 171, 1);
+        // box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    .input-form-input:focus {
+        border-color: #49c6f0;
+        outline-color: #72bcf4;
+        outline-offset: 2px;
+    }
+
+    input[type=submit] {
+        background-color: #0291ff;
+        border: 1px solid #72bcf4;
+        box-shadow: 2px 2px 2px rgb(216, 216, 216);
+        border-radius: 4px;
+        width: 100%;
+        height: 40px;
+        margin-top: 5px;
+        margin-right: 5px;
+        color: white;
+        font-size: 20px;
+    }
+
+    input[type=submit]:hover {
+        background-color: #e29b49;
+        border: 1px solid #ff8902;
+    }
+
+    input[type=submit]:focus {
+        background-color: #ff8902;
+        border: 1px solid #ff8902;
+    }
+
+
 }

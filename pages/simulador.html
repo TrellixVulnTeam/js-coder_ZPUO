@@ -14,6 +14,7 @@
 
     <!-- SCRIPTS -->
     <script defer src="../js/index.js"></script>
+    <script defer src="../js/moment.js"></script>
     <script defer src="../js/simulador.js"></script>
     <title>Emprendiendo</title>
 </head>
@@ -48,7 +49,7 @@
         </nav>
     </header>
 
-    <div class="container-main">
+    <div class="container-main fluid">
         <div class="container-form">
             <form class="input-form" id="inputForm">
                 <div class="input-form-div" id = 'divFormEmpleados' tabindex="1">
@@ -103,7 +104,11 @@
             </form>
         </div>
         <div class="container-ofertas">
-            <h3>Lista de ofertas</h3>
+            <div>
+                <h3>Lista de ofertas</h3>
+                <p>Escoga una de las siguientes opciones</p>
+            </div>
+            
             <ul class="ofertas-ul" id="ofertasUl">
                 <li>
                     <p>Completa los datos para mostrate ofertas</p>
@@ -112,6 +117,41 @@
         </div>
     </div>
 
+    <section id="simuladorCuota" class="fluid">
+        <div class="container-form">
+            <form class="input-form" id="inputFormSimulador">
+                <div class="input-form-div" id = 'divFormMonto' tabindex="1">
+                    <label class='input-form-label' for="monto">
+                        Monto
+                    </label>
+                    <input class='input-form-input' id = "monto" name="monto" type="number" min="0" placeholder="1'000.000" required>
+                </div>
+                <div class="input-form-div" id = 'divFormPlazo' tabindex="1">
+                    <label class='input-form-label' for="plazo">
+                        Plazo en meses
+                    </label>
+                    <input class='input-form-input' id = "plazo" name="plazo" type="number" min="0" placeholder="60" required>
+                </div>
+                <div class="input-form-div" id = 'divFormSubmit'>
+                    <input type="submit" value="Simular Crédito" id="buttonSimular">
+                </div>
+            </form>
+        </div>
+    </section>
+    <div class="amortizacion" id = "amortizacion">
+        <table id="lista-tabla">
+            <thead>
+                <tr>
+                    <th>Fecha</th>
+                    <th>Cuota</th>
+                    <th>Abono a capital</th>
+                    <th>Pago de interés</th>
+                    <th>Saldo</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
 
     <!-- ************************************************************** -->
     <!-- ************************ FOOTER ****************************** -->
