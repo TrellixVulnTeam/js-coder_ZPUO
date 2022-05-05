@@ -8,6 +8,7 @@ body {
 
     .container-main {
         background-color: transparent;
+        margin-bottom: 40px;
 
         .container-form {
             display: flex;
@@ -88,7 +89,14 @@ body {
         .container-ofertas {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            align-items: center;            
+
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
 
             .ofertas-ul {
                 list-style-type: none;
@@ -96,7 +104,8 @@ body {
                 padding: 0;
                 width: 300px;
                 height: 200px;
-                overflow-y: scroll;
+                overflow-y: hidden;
+                margin-bottom: 20px;
 
                 li {
                     width: 100%;
@@ -153,6 +162,9 @@ body {
         div {
             display: flex;
             justify-content: center;
+            justify-self: center;
+            width: 100%;
+            margin-top:20px;
 
             form {
                 display: grid;
@@ -165,10 +177,17 @@ body {
                     grid-area: m;
                     display: flex;
                     flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
                     width: 100%;
+
+                    label {
+                        display: flex;
+                    }
 
                     input {
                         width: 50%;
+                        justify-content: center;
                     }
                 }
 
@@ -176,6 +195,8 @@ body {
                     grid-area: p;
                     display: flex;
                     flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
                     width: 100%;
 
                     input {
@@ -198,11 +219,12 @@ body {
                         color: white;
                         font-size: 20px;
                     }
+                    input[type=submit]:hover {
+                        background-color: orange;
+                    }
                 }
-
             }
         }
-
         
     }
 
@@ -213,7 +235,7 @@ body {
         justify-content: center;
         width: 100%;
         height: 20rem;
-        overflow: scroll;
+        overflow: hidden;
         background-color: white;
         border-radius: 5px;
         #lista-tabla {
@@ -261,6 +283,7 @@ body {
         width: 70%;
         background: white;
         border-radius: 3px;
+        color: rgba(171, 171, 171, 1);
         // box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
     }
 

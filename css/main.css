@@ -138,7 +138,8 @@ body {
 body {
   grid-template-areas: "hd   hd   hd   hd   hd   hd   hd   hd   hd   hd   hd   hd" "main main main main main main main  main  main  main  main  main" "sim sim sim sim sim sim sim  sim  sim  sim  sim  sim" "tab tab tab tab tab tab tab  tab  tab  tab  tab  tab" "ft   ft   ft   ft   ft   ft   ft   ft   ft   ft   ft   ft"; }
   body .container-main {
-    background-color: transparent; }
+    background-color: transparent;
+    margin-bottom: 40px; }
     body .container-main .container-form {
       display: flex;
       justify-content: center;
@@ -187,13 +188,19 @@ body {
       display: flex;
       flex-direction: column;
       align-items: center; }
+      body .container-main .container-ofertas div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
       body .container-main .container-ofertas .ofertas-ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
         width: 300px;
         height: 200px;
-        overflow-y: scroll; }
+        overflow-y: hidden;
+        margin-bottom: 20px; }
         body .container-main .container-ofertas .ofertas-ul li {
           width: 100%;
           text-align: center; }
@@ -229,7 +236,10 @@ body {
     height: 10rem; }
     body #simuladorCuota div {
       display: flex;
-      justify-content: center; }
+      justify-content: center;
+      justify-self: center;
+      width: 100%;
+      margin-top: 20px; }
       body #simuladorCuota div form {
         display: grid;
         width: 80%;
@@ -238,13 +248,20 @@ body {
           grid-area: m;
           display: flex;
           flex-direction: column;
+          justify-content: center;
+          align-items: center;
           width: 100%; }
+          body #simuladorCuota div form #divFormMonto label {
+            display: flex; }
           body #simuladorCuota div form #divFormMonto input {
-            width: 50%; }
+            width: 50%;
+            justify-content: center; }
         body #simuladorCuota div form #divFormPlazo {
           grid-area: p;
           display: flex;
           flex-direction: column;
+          justify-content: center;
+          align-items: center;
           width: 100%; }
           body #simuladorCuota div form #divFormPlazo input {
             width: 50%; }
@@ -261,13 +278,15 @@ body {
             margin-right: 5px;
             color: white;
             font-size: 20px; }
+          body #simuladorCuota div form #divFormSubmit input[type=submit]:hover {
+            background-color: orange; }
   body .amortizacion {
     grid-area: tab;
     display: none;
     justify-content: center;
     width: 100%;
     height: 20rem;
-    overflow: scroll;
+    overflow: hidden;
     background-color: white;
     border-radius: 5px; }
     body .amortizacion #lista-tabla {
@@ -298,7 +317,8 @@ body {
     padding: 5px 10px 5px 10px;
     width: 70%;
     background: white;
-    border-radius: 3px; }
+    border-radius: 3px;
+    color: #ababab; }
   body .input-form-div {
     margin-top: 5px; }
   body .input-form-input::placeholder {

@@ -5,15 +5,21 @@ const gastos = document.getElementById('gastos');
 
 const sectionSimulador = document.getElementById('simuladorCuota');
 const ofertasUl = document.getElementById('ofertasUl');
+const ofButton = document.getElementsByClassName('list-group-button')
+
 
 const inputForm = document.getElementById('inputForm');
 const simuladorForm = document.getElementById('inputFormSimulador');
 
-const monto = document.getElementById('monto');
-const plazo = document.getElementById('plazo');
-var tasa = null;
+let monto = document.getElementById('monto');
+let plazo = document.getElementById('plazo');
+let tasa = null;
+
+
 const amortizacion = document.getElementById('amortizacion');
 const llenarTabla = document.querySelector("#lista-tabla tbody");
+
+
 
 
 function clasificadorEmpresa(empleados, sector, ingresos, gastos) {
@@ -46,7 +52,7 @@ function ofertasSegunTamañoEmpresa(tamaño){
             ofertas.forEach((of)=>{
                 const ofertasLi = document.createElement('li');
                 ofertasLi.innerHTML = `<a href="#simuladorCuota">
-                                            <button class="list-group-button" onclick="ofertasOnclick(this);">
+                                            <button class="list-group-button" id = 'ofButton' onclick="ofertasOnclick(this);">
                                             <div class="text-success">
                                                 <h4 class="my-0">${of.Banco}</h4>
                                                 <small>Préstamo para ${tamaño} empresa</small>
@@ -54,6 +60,7 @@ function ofertasSegunTamañoEmpresa(tamaño){
                                             <span class="text-success" id="ofertasSpan">${parseFloat(of.Tasa)*100}%</span>
                                         </button>
                                     </a> `;
+                ofertasUl.style.overflow = "scroll";
                 ofertasUl.appendChild(ofertasLi);
             })
         })
@@ -65,15 +72,17 @@ inputForm.addEventListener('submit', function(e){
     const tamañoEm = clasificadorEmpresa(empleados.value);
     ofertasSegunTamañoEmpresa(tamañoEm);
 })
-ofertasSegunTamañoEmpresa('Micro')
-// ofertasSegunTamañoEmpresa('Micro')
 
-// `<button class="list-group-button" onclick="selectTasa(this);">
-// ofertasSegunTamañoEmpresa("Micro")
+
+
 
 function ofertasOnclick(obj)  {
     sectionSimulador.style.display = 'grid';
     obj.id = 'tasaEscogida';
+    for (let item of ofButton) {
+        item.style.backgroundColor = 'white';
+    }
+    obj.style.backgroundColor = 'orange';
 } 
 
 // console.log(tasa)
@@ -82,6 +91,7 @@ function calcularCuota(monto, interes, tiempo) {
 
     // variables y constantes a usar
     amortizacion.style.display = "flex";
+    amortizacion.style.overflow = "scroll";
     // La tasa es EA se pasa a períodico
     interes = Math.pow(1 + (interes / 100), (1 / 12)) - 1
     const capital = monto
